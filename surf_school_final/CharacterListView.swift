@@ -7,6 +7,19 @@ struct CharacterListView: View {
     var body: some View {
         NavigationView() {
             List(characters, id: \.id) { character in CharacterTableCell(character: character)
+                    .task {
+                        if (character.id == characters.last?.id) {
+                            if let next = response?.info.next{
+                                do {
+                                    self.response = try await characterManager.GetCharacters(strUrl: next)
+                                    self.characters += response?.results ?? []
+                                }
+                                catch {
+                                    print("something went wrong")
+                                }
+                            }
+                        }
+                    }
                     .background(
                         NavigationLink("", destination: CharacterDetailView(character: character).toolbarRole(.editor))
                             .opacity(0)

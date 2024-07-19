@@ -68,13 +68,14 @@ struct Character: Decodable {
     
     
     func getEpisodesList() -> String {
-        var ans = " "
+        var ans = "["
         for ep in episode{
             let splitEpisod = ep.split(separator: "/")
             ans += (splitEpisod[4] + ", ")
         }
         ans.remove(at: ans.index(before: ans.endIndex))
         ans.remove(at: ans.index(before: ans.endIndex))
+        ans += "]"
         
         return ans
     }

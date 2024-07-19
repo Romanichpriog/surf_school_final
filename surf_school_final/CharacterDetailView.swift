@@ -2,7 +2,10 @@ import SwiftUI
 
 struct CharacterDetailView: View {
     let character: Character
+    var episodeManager: EpisodeManager = EpisodeManager()
+    @State var episodes = ""
     var body: some View {
+        ScrollView{
             VStack() {
                 VStack(alignment: .center) {
                     AsyncImage(url: URL(string: character.image)) {
@@ -21,22 +24,29 @@ struct CharacterDetailView: View {
                         .background(character.status.statusColor)
                         .cornerRadius(15)
                         .padding(.bottom, 24)
-
-                        VStack(alignment: .leading, spacing: 12) {
-                            Text("Species: ").font(Font.custom("IBMPlexSans-SemiBold", size: 16)) +
-                            Text(character.species).font(Font.custom("IBMPlexSans-Regular", size: 16))
-                            Text("Gender: ").font(Font.custom("IBMPlexSans-SemiBold", size: 16)) +
-                            Text(character.gender.getGenderStr).font(Font.custom("IBMPlexSans-Regular", size: 16))
-                            Text("Episodes: ").font(Font.custom("IBMPlexSans-SemiBold", size: 16)) +
-                            Text(character.getEpisodesList()).font(Font.custom("IBMPlexSans-Regular", size: 16))
-                            HStack(){Text("Last known location: ").font(Font.custom("IBMPlexSans-SemiBold", size: 16)) +
-                                Text(character.location.name).font(Font.custom("IBMPlexSans-Regular", size: 16))}
-                            .padding(.bottom, 16)
-                            
-                        }
-                        .frame(width: 320,
-                               alignment: .leading)
-                        .foregroundColor(.white)
+                    
+                    VStack(alignment: .leading, spacing: 12) {
+                        Text("Species: ").font(Font.custom("IBMPlexSans-SemiBold", size: 16)) +
+                        Text(character.species).font(Font.custom("IBMPlexSans-Regular", size: 16))
+                        Text("Gender: ").font(Font.custom("IBMPlexSans-SemiBold", size: 16)) +
+                        Text(character.gender.getGenderStr).font(Font.custom("IBMPlexSans-Regular", size: 16))
+                        Text("Episodes: ").font(Font.custom("IBMPlexSans-SemiBold", size: 16)) +
+                        Text(episodes).font(Font.custom("IBMPlexSans-Regular", size: 16))
+                        HStack(){Text("Last known location: ").font(Font.custom("IBMPlexSans-SemiBold", size: 16)) +
+                            Text(character.location.name).font(Font.custom("IBMPlexSans-Regular", size: 16))}
+                        .padding(.bottom, 16)
+                        
+                    }
+                    .frame(width: 320,
+                           alignment: .leading)
+                    .foregroundColor(.white)
+                }
+                .task {
+                    do {
+                        self.episodes = try await episodeManager.GetEpisodeNamesStr(episodesNumbers: self.character.getEpisodesList())
+                    } catch {
+                        print("Something went wrong")
+                    }
                 }
                 .padding(.horizontal, 16)
                 .background(Color(red: 21/256, green: 21/256, blue: 23/256))
@@ -45,12 +55,13 @@ struct CharacterDetailView: View {
                 Spacer()
             }
             .frame(
-                  minWidth: 0,
-                  maxWidth: .infinity,
-                  minHeight: 0,
-                  maxHeight: .infinity,
-                  alignment: .center
-                )
+                minWidth: 0,
+                maxWidth: .infinity,
+                minHeight: 0,
+                maxHeight: .infinity,
+                alignment: .center
+            )
+        }
 
             .navigationTitle(character.name)
             .navigationBarTitleDisplayMode(.inline)

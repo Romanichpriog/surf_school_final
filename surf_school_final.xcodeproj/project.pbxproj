@@ -44,6 +44,9 @@
 		E08896E42C4AB7AA0073CC02 /* CharactersManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E08896E32C4AB7AA0073CC02 /* CharactersManager.swift */; };
 		E08896E52C4AB7AA0073CC02 /* CharactersManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E08896E32C4AB7AA0073CC02 /* CharactersManager.swift */; };
 		E08896E62C4AB7AA0073CC02 /* CharactersManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E08896E32C4AB7AA0073CC02 /* CharactersManager.swift */; };
+		E08896E82C4AF7AF0073CC02 /* EpisodeManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E08896E72C4AF7AF0073CC02 /* EpisodeManager.swift */; };
+		E08896E92C4AF7AF0073CC02 /* EpisodeManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E08896E72C4AF7AF0073CC02 /* EpisodeManager.swift */; };
+		E08896EA2C4AF7AF0073CC02 /* EpisodeManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E08896E72C4AF7AF0073CC02 /* EpisodeManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -85,6 +88,7 @@
 		E08896DB2C4A8F260073CC02 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E08896DF2C4A929A0073CC02 /* CharacterDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterDetailView.swift; sourceTree = "<group>"; };
 		E08896E32C4AB7AA0073CC02 /* CharactersManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharactersManager.swift; sourceTree = "<group>"; };
+		E08896E72C4AF7AF0073CC02 /* EpisodeManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EpisodeManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -147,6 +151,7 @@
 				E08896DB2C4A8F260073CC02 /* AppDelegate.swift */,
 				E08896DF2C4A929A0073CC02 /* CharacterDetailView.swift */,
 				E08896E32C4AB7AA0073CC02 /* CharactersManager.swift */,
+				E08896E72C4AF7AF0073CC02 /* EpisodeManager.swift */,
 			);
 			path = surf_school_final;
 			sourceTree = "<group>";
@@ -334,6 +339,7 @@
 				E08896CC2C49E90B0073CC02 /* Character.swift in Sources */,
 				E08896E02C4A929A0073CC02 /* CharacterDetailView.swift in Sources */,
 				E08896D42C49FD6F0073CC02 /* CharacterListView.swift in Sources */,
+				E08896E82C4AF7AF0073CC02 /* EpisodeManager.swift in Sources */,
 				E08896E42C4AB7AA0073CC02 /* CharactersManager.swift in Sources */,
 				E08896962C497AC60073CC02 /* ContentView.swift in Sources */,
 				E08896942C497AC60073CC02 /* surf_school_finalApp.swift in Sources */,
@@ -347,6 +353,7 @@
 				E08896A52C497AC90073CC02 /* surf_school_finalTests.swift in Sources */,
 				E08896E52C4AB7AA0073CC02 /* CharactersManager.swift in Sources */,
 				E08896D12C49ED350073CC02 /* CharacterTableCell.swift in Sources */,
+				E08896E92C4AF7AF0073CC02 /* EpisodeManager.swift in Sources */,
 				E08896D52C49FD6F0073CC02 /* CharacterListView.swift in Sources */,
 				E08896E12C4A929A0073CC02 /* CharacterDetailView.swift in Sources */,
 				E08896DD2C4A8F260073CC02 /* AppDelegate.swift in Sources */,
@@ -363,6 +370,7 @@
 				E08896CE2C49E90B0073CC02 /* Character.swift in Sources */,
 				E08896E22C4A929A0073CC02 /* CharacterDetailView.swift in Sources */,
 				E08896D62C49FD6F0073CC02 /* CharacterListView.swift in Sources */,
+				E08896EA2C4AF7AF0073CC02 /* EpisodeManager.swift in Sources */,
 				E08896E62C4AB7AA0073CC02 /* CharactersManager.swift in Sources */,
 				E08896AF2C497AC90073CC02 /* surf_school_finalUITests.swift in Sources */,
 				E08896B12C497AC90073CC02 /* surf_school_finalUITestsLaunchTests.swift in Sources */,
