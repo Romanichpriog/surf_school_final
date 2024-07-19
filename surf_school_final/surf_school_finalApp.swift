@@ -9,9 +9,10 @@ import SwiftUI
 
 @main
 struct surf_school_finalApp: App {
+    @UIApplicationDelegateAdaptor(AppDelegate.self) var appDelegate
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            CharacterListView(characterManager: CharactersManager())
         }
     }
 }
